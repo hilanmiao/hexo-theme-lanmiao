@@ -1,0 +1,94 @@
+/*-----------------------toc------------------------------*/
+.bs-docs-sidebar {
+    margin-top: 60px;
+    padding-left: 20px
+}
+
+.bs-docs-sidebar.affix {
+    position: static
+}
+
+.bs-docs-sidebar h4 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+/*一级目录*/
+
+.bs-docs-sidebar .nav > li > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #999
+}
+
+.bs-docs-sidebar .nav > li > a:hover, .bs-docs-sidebar .nav > li > a:focus {
+    padding-left: 19px;
+    color: rgb(230, 97, 140);
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 1px solid rgb(230, 97, 140);
+}
+
+.bs-docs-sidebar .nav > .active > a, .bs-docs-sidebar .nav > .active:hover > a, .bs-docs-sidebar .nav > .active:focus > a {
+    padding-left: 18px;
+    font-weight: 700;
+    color: rgb(230, 97, 140);
+    background-color: transparent;
+    border-left: 2px solid rgb(230, 97, 140);
+}
+
+/*二级目录*/
+
+.bs-docs-sidebar .nav .nav {
+    display: none;
+    padding-bottom: 10px
+}
+
+.bs-docs-sidebar .nav .nav > li > a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 40px;
+    font-size: 16px;
+    font-weight: 400
+}
+
+.bs-docs-sidebar .nav .nav > li > a:hover, .bs-docs-sidebar .nav .nav > li > a:focus {
+    padding-left: 39px
+}
+
+.bs-docs-sidebar .nav .nav > .active > a, .bs-docs-sidebar .nav .nav > .active:hover > a, .bs-docs-sidebar .nav .nav > .active:focus > a {
+    padding-left: 38px;
+    font-weight: 500
+}
+
+@media (min-width: 992px) {
+    .bs-docs-sidebar .nav > .active > ul {
+        display: block
+    }
+
+    .bs-docs-sidebar.affix, .bs-docs-sidebar.affix-bottom {
+        width: 213px
+    }
+
+    .bs-docs-sidebar.affix {
+        position: fixed;
+        top: 20px
+    }
+
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute
+    }
+
+    .bs-docs-sidebar.affix-bottom .bs-docs-sidenav, .bs-docs-sidebar.affix .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+
+@media (min-width: 1200px) {
+    .bs-docs-sidebar.affix-bottom, .bs-docs-sidebar.affix {
+        width: 263px
+    }
+}

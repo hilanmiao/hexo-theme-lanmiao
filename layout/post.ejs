@@ -1,0 +1,53 @@
+<!-- Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post container -->
+
+        <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+
+            <%- page.content%>
+
+
+            <!-- Pager -->
+            <ul class="pager">
+                <% if (page.prev){ %>
+                <li class="previous">
+                    <a href="<%- url_for(page.prev.path) %>" >&larr; Previous Post</a>
+                </li>
+                <% } %>
+                <% if (page.next){ %>
+                <li class="next">
+                    <a href="<%- url_for(page.next.path) %>" >Next Post &rarr;</a>
+                </li>
+                <% } %>
+            </ul>
+
+
+
+        </div>
+        <!-- Sidebar container-->
+        <div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+            <!-- toc -->
+            <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+                <h4><i class="fa fa-bookmark"></i> Catalog</h4>
+                <ul class="nav bs-docs-sidenav">
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>

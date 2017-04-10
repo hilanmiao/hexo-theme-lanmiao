@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row">
+        <!-- Post Container -->
+        <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+
+            <% page.posts.each(function(post){ %>
+
+            <div class="post-preview">
+                <div class="layout-top">
+                    <h5 class="post-subtitle"><%- post.subtitle || "Unsubtitled" %>
+                        <span class="post-meta"><%- date(post.date, "YYYY-MM-DD") %> <i class="fa fa-bookmark"></i></span>
+                    </h5>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="layout-bottom">
+                    <div class="post-content-container">
+                        <a href="<%- url_for(post.path) %>">
+                            <h2 class="post-title"><%- post.title || "Untitled" %></h2>
+                            <div class="post-content">
+                                <img src="<%- url_for( post.path + post["header-img"])%>" class="post-header-img">
+                                <p class="post-excerpt"><%- truncate(strip_html(post.excerpt), {
+                                        length: 120,
+                                        omission: '...'
+                                    }) %>...</p>
+                            </div>
+                        </a>
+
+                        <div class="tags">
+                            <% post.tags.forEach(function(tag){ %>
+                            <a class="tag" href="<%- url_for('/tags/'+tag.name)%>"><%= tag.name %></a>
+                            <% }) %>
+                        </div>
+                    </div>
+                    <div class="post-author">
+                        <h4>Author</h4>
+                        <h5>Lazy Cat</h5>
+                        <img src="<%- url_for( config.favicon )%>">
+                        <p>
+                            <a href="javascript:;" data-href="<%- url_for(post.path) %>">
+                                <span><i class="fa fa-link"></i></span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <% }); %>
+
+            <!-- Pager -->
+            <%- partial('_partial/pagination') %>
+
+        </div>
+
+        <!-- Sidebar -->
+        <%- partial('_partial/sidebar') %>
+    </div>
+</div>

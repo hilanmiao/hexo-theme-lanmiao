@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <!-- Post Container -->
+        <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+
+            <% page.posts.each(function(post){ %>
+
+            <div class=" post-list">
+                <div class="layout-top">
+                    <h5 class="post-subtitle">
+                        <%- date(post.date, "YYYY-MM-DD") %> <i class="fa fa-bookmark"></i>
+                    </h5>
+                </div>
+                <div class="layout-bottom">
+                    <div class="post-content-container">
+                        <a href="<%- url_for(post.path) %>">
+                            <h2 class="post-title"><%- post.title || "Untitled" %></h2>
+                        </a>
+
+                        <div class="post-list-tags">
+                            <span><i class="fa fa-tag"></i></span>
+                            <% post.tags.forEach(function(tag){ %>
+                            <a class="tag" href="<%- url_for('/tags/'+tag.name)%>"><%= tag.name %></a>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% }); %>
+
+            <!-- Pager -->
+            <%- partial('_partial/pagination') %>
+
+        </div>
+
+        <!-- Sidebar -->
+        <%- partial('_partial/sidebar') %>
+    </div>
+</div>

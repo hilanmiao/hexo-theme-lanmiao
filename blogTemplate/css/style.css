@@ -1,0 +1,570 @@
+body {
+    /*font: 300 1.2em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;*/
+    font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+    color: #404040;
+    overflow-x: hidden;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /* Hux learn from
+       *     TypeIsBeautiful,
+       *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
+       */
+    font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    line-height: 1.7;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+a {
+    color: #404040;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: rgb(230, 97, 140);
+    text-decoration: none;
+}
+
+/*-------------------------------------------header------------------------------*/
+.intro-header {
+    background: no-repeat center center;
+    background-color: #808080;
+    background-attachment: scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    margin-bottom: 0px;
+    /* modify by Yu-Hsuan Yen */
+}
+@media only screen and (min-width: 768px) {
+    .intro-header {
+        margin-bottom: 20px;
+        /* response on desktop */
+    }
+}
+.intro-header .site-heading,
+.intro-header .post-heading,
+.intro-header .page-heading {
+    padding: 85px 0 55px;
+    color: white;
+}
+@media only screen and (min-width: 768px) {
+    .intro-header .site-heading,
+    .intro-header .post-heading,
+    .intro-header .page-heading {
+        padding: 150px 0;
+    }
+}
+.intro-header .site-heading {
+    padding: 95px 0 70px;
+}
+@media only screen and (min-width: 768px) {
+    .intro-header .site-heading {
+        padding: 150px 0;
+    }
+}
+.intro-header .site-heading,
+.intro-header .page-heading {
+    text-align: center;
+}
+.intro-header .site-heading h1,
+.intro-header .page-heading h1 {
+    margin-top: 0;
+    font-size: 50px;
+}
+.intro-header .site-heading .subheading,
+.intro-header .page-heading .subheading {
+    /* Hux learn from
+       *     TypeIsBeautiful,
+       *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
+       */
+    font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    line-height: 1.7;
+    font-size: 18px;
+    line-height: 1.1;
+    display: block;
+    font-weight: 300;
+    margin: 10px 0 0;
+}
+@media only screen and (min-width: 768px) {
+    .intro-header .site-heading h1,
+    .intro-header .page-heading h1 {
+        font-size: 80px;
+    }
+}
+.intro-header .post-heading h1 {
+    font-size: 30px;
+    margin-bottom: 24px;
+}
+.intro-header .post-heading .subheading,
+.intro-header .post-heading .meta {
+    line-height: 1.1;
+    display: block;
+}
+.intro-header .post-heading .subheading {
+    /* Hux learn from
+       *     TypeIsBeautiful,
+       *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
+       */
+    font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    line-height: 1.7;
+    font-size: 17px;
+    line-height: 1.4;
+    font-weight: normal;
+    margin: 10px 0 30px;
+    margin-top: -5px;
+}
+.intro-header .post-heading .meta {
+    font-family: 'Lora', 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 18px;
+}
+.intro-header .post-heading .meta a {
+    color: white;
+}
+@media only screen and (min-width: 768px) {
+    .intro-header .post-heading h1 {
+        font-size: 55px;
+    }
+    .intro-header .post-heading .subheading {
+        font-size: 30px;
+    }
+    .intro-header .post-heading .meta {
+        font-size: 20px;
+    }
+}
+/*-----------------------------nav-----------------------------------*/
+@media only screen and (max-width: 767px) {
+    .navbar-default .navbar-collapse {
+        border: none;
+        background: #fff;
+        box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: rgba(0, 0, 0, 0.118) 0px 1px 6px, rgba(0, 0, 0, 0.239) 0px 1px 4px;
+        border-radius: 2px;
+        width: 170px;
+        float: right;
+        margin: 0px;
+    }
+
+    #huxblog_navbar {
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: top right;
+        transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+        -webkit-transform: scaleX(0);
+        -webkit-transform-origin: top right;
+        -webkit-transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #huxblog_navbar a {
+        font-size: 13px;
+        line-height: 28px;
+    }
+
+    #huxblog_navbar .navbar-collapse {
+        height: 0px;
+        transform: scaleY(0);
+        transform-origin: top right;
+        transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
+        -webkit-transform: scaleY(0);
+        -webkit-transform-origin: top right;
+        -webkit-transition: -webkit-transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #huxblog_navbar li {
+        opacity: 0;
+        transition: opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 205ms;
+        -webkit-transition: opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 205ms;
+    }
+
+    #huxblog_navbar.in {
+        transform: scaleX(1);
+        -webkit-transform: scaleX(1);
+        opacity: 1;
+    }
+
+    #huxblog_navbar.in .navbar-collapse {
+        transform: scaleY(1);
+        -webkit-transform: scaleY(1);
+    }
+
+    #huxblog_navbar.in li {
+        opacity: 1;
+    }
+}
+
+.navbar-custom {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3 /* Hux learn from
+     *     TypeIsBeautiful,
+     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
+     */;
+    font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    line-height: 1.7;
+}
+
+.navbar-custom .navbar-brand {
+    font-weight: 800;
+    color: #fff;
+    height: 56px;
+    line-height: 25px;
+}
+
+.navbar-custom .navbar-brand:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-custom .nav li a {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.navbar-custom .nav li a:active {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+@media only screen and (min-width: 768px) {
+    .navbar-custom {
+        background: transparent;
+        border-bottom: 1px solid transparent;
+    }
+
+    .navbar-custom body {
+        font-size: 20px;
+    }
+
+    .navbar-custom .navbar-brand {
+        color: #fff;
+        padding: 20px;
+        line-height: 20px;
+    }
+
+    .navbar-custom .navbar-brand:hover,
+    .navbar-custom .navbar-brand:focus {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .navbar-custom .nav li a {
+        color: #fff;
+        padding: 20px;
+    }
+
+    .navbar-custom .nav li a:hover,
+    .navbar-custom .nav li a:focus {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .navbar-custom .nav li a:active {
+        background: none;
+    }
+}
+
+@media only screen and (min-width: 1170px) {
+    .navbar-custom {
+        -webkit-transition: background-color 0.3s;
+        -moz-transition: background-color 0.3s;
+        transition: background-color 0.3s;
+        /* Force Hardware Acceleration in WebKit */
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .navbar-custom.is-fixed {
+        /* when the user scrolls down, we hide the header right above the viewport */
+        position: fixed;
+        top: -61px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid #f2f2f2;
+        -webkit-transition: -webkit-transform 0.3s;
+        -moz-transition: -moz-transform 0.3s;
+        transition: transform 0.3s;
+    }
+
+    .navbar-custom.is-fixed .navbar-brand {
+        color: #404040;
+    }
+
+    .navbar-custom.is-fixed .navbar-brand:hover,
+    .navbar-custom.is-fixed .navbar-brand:focus {
+        color: #0085a1;
+    }
+
+    .navbar-custom.is-fixed .nav li a {
+        color: #404040;
+    }
+
+    .navbar-custom.is-fixed .nav li a:hover,
+    .navbar-custom.is-fixed .nav li a:focus {
+        color: #0085a1;
+    }
+
+    .navbar-custom.is-visible {
+        /* if the user changes the scrolling direction, we show the header */
+        -webkit-transform: translate3d(0, 100%, 0);
+        -moz-transform: translate3d(0, 100%, 0);
+        -ms-transform: translate3d(0, 100%, 0);
+        -o-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+    background-color: inherit;
+}
+
+.navbar-default .navbar-toggle:active {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    padding: 19px 16px;
+    margin-top: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border-radius: 50%;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    width: 18px;
+    border-radius: 0px;
+    background-color: #fff;
+}
+
+.navbar-default .navbar-toggle .icon-bar + .icon-bar {
+    margin-top: 3px;
+}
+
+/*-------------------------footer-----------------------------------*/
+footer {
+    font-size: 20px;
+    padding: 50px 0 65px;
+}
+
+footer .list-inline {
+    margin: 0;
+    padding: 0;
+}
+
+footer .copyright {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+footer .copyright a {
+    color: #337ab7;
+}
+
+footer .copyright a:hover,
+footer .copyright a:focus {
+    color: #0085a1;
+}
+
+.page-fullscreen footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding-bottom: 20px;
+    opacity: 0.6;
+    color: #fff;
+}
+
+.page-fullscreen footer .copyright {
+    color: #fff;
+}
+
+.page-fullscreen footer .copyright a {
+    color: #fff;
+}
+
+.page-fullscreen footer .copyright a:hover {
+    color: #ddd;
+}
+
+/*------------------------tags------------------------*/
+.tags {
+    margin-top: 15px;
+}
+.tags a,
+.tags .tag {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 999em;
+    padding: 0 10px;
+    color: #ffffff;
+    line-height: 24px;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 0 1px;
+    margin-bottom: 6px;
+}
+.tags a:hover,
+.tags .tag:hover,
+.tags a:active,
+.tags .tag:active {
+    color: white;
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+}
+@media only screen and (min-width: 768px) {
+    .tags a,
+    .tags .tag {
+        margin-right: 5px;
+    }
+}
+
+.post-container .tags a{color:gray;border-color:gray}
+
+.post-container .tags a:hover,
+.post-container .tags a:active {
+    color: rgb(230, 97, 140);
+    border-color: rgb(230, 97, 140);
+}
+
+
+
+/*-----------------------分页------------------------------*/
+.pager li > a {
+    border-radius: 999em;
+}
+
+
+
+
+
+/*-----------------------分类widget------------------------*/
+
+.categoryWidget {
+    margin-top: 100px;
+    padding-left: 40px;
+}
+
+.categoryWidget h3{
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.categoryWidget .panel {
+    box-shadow: none;
+    margin-bottom: 0;
+    border: none;
+}
+
+.categoryWidget .categoryName {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.categoryWidget .categoryCount {
+    display: inline-block;
+    color: rgb(230, 97, 140);
+    margin-left: 10px;
+}
+
+/*.categoryWidget .category:before{*/
+/*content:'\25ba';*/
+/*color: rgb(163,163,163);*/
+/*}*/
+
+/*.categoryWidget .collapse ul li:before{*/
+/*content:'\25ba';*/
+/*color: rgb(163,163,163);*/
+/*}*/
+
+/*-----------------------归档widget------------------------*/
+.archieveWidget {
+    margin-top: 50px;
+    padding-left: 40px;
+}
+
+.archieveWidget h3{
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.archieveWidget .panel {
+    box-shadow: none;
+    margin-bottom: 0;
+    border: none;
+}
+
+.archieveWidget .archieveName {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.archieveWidget .archieveCount {
+    display: inline-block;
+    color: rgb(230, 97, 140);
+    margin-left: 10px;
+}
+
+/*-----------------------标签widget------------------------*/
+.tagWidget {
+    margin-top: 50px;
+    padding-left: 40px;
+}
+
+.tagWidget a {
+    display: inline-block;
+    color: #fff;
+    background: #ccc;
+    padding: 2px 5px;
+    margin: 2px;
+    border-radius: 2px;
+}
+
+.tagWidget a:hover {
+    color: rgb(230, 97, 140);
+    border-color: rgb(230, 97, 140);
+}
+
+
+
+
+/*-----------------------列表页------------------------*/
+.post-list{    margin-top: 0px;
+    border-radius: 2px;
+    padding: 15px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+
+}
+
+.post-list-tags span ,.post-list-tags  a{
+    color: grey;
+}
+
+.post-list-tags a:hover{
+    color: rgb(230, 97, 140);
+}

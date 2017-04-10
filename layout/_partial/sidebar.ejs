@@ -1,0 +1,148 @@
+<!-- Sidebar container-->
+<div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-12 col-xs-12 sidebar-container">
+    <div class="bs-docs-sidebar">
+
+        <!-- categoryWidget -->
+        <div class="categoryWidget">
+            <h3 style="text-align: center;">Categories</h3>
+            <div id="accordion">
+                <!-- 分组 -->
+                <%
+                var tempList = [];
+
+                site.categories.each(function (category) {
+                    if (!category.parent) {
+                        category.child = [];
+
+                        tempList.push(category);
+                    }
+                });
+
+                site.categories.each(function (category) {
+                    if (category.parent) {
+                        tempList.forEach(function (parentCategory) {
+                            if (parentCategory._id === category.parent) {
+                                parentCategory.child.push(category);
+                            }
+                        });
+                    }
+                });
+                %>
+
+                <% tempList.forEach(function(category){ %>
+                <div class="panel">
+                    <div class="category">
+                        <span><i class="fa fa-angle-double-right"></i></span>
+                        <a class="categoryName" data-category="<%- category.name %>" data-toggle="collapse"
+                           data-parent="#accordion"
+                           data-target="#<%- category._id %>"
+                           href="<%- url_for('/categories/' + category.name + '/') %>">
+                            <h5><%- category.name %> (<%- category.length %>)</h5>
+                        </a>
+                    </div>
+                    <div class="collapse" id="<%- category._id %>">
+                        <ul>
+                            <% category.child.forEach(function(childCategory){ %>
+                            <li>
+                                <span><i class="fa fa-angle-right"></i></span>
+                                <a class="categoryName" data-pcategory="<%- category.name %>" data-category="<%- childCategory.name %>"
+                                   href="<%- url_for('/categories/' + category.name + '/'+ childCategory.name+'/') %>"
+                                >
+                                    <h5><%- childCategory.name %> (<%- childCategory.length %>)</h5>
+                                </a>
+                            </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+
+        </div>
+
+        <!-- archiveWidget -->
+        <div class="archiveWidget">
+            <h3 style="text-align: center;">Archives</h3>
+
+            <div id="archive">
+                <%
+                var posts = {};
+
+                site.posts.sort('-date').forEach(function(post) {
+                    var date = post.date;
+                    var year = date.year();
+                    var month = date.month() + 1; // month is started from 0
+
+                    if (!posts.hasOwnProperty(year)) {
+                        // 13 arrays. The first array is for posts in this year
+                        // and the other arrays is for posts in this month
+                        posts[year] = [
+                            [],
+                            [],
+                            [],
+                            [],
+                            [],
+                            [],
+                            [],
+                            [],
+                            [],
+                            [],
+                            [],
+                            [],
+                            []
+                        ];
+                    }
+
+                    posts[year][0].push(post);
+                    posts[year][month].push(post);
+                });
+                %>
+
+                <% Object.keys(posts).forEach(function(year){ %>
+                <div class="panel">
+                    <div class="archive">
+                        <span><i class="fa fa-angle-double-right"></i></span>
+                        <a class="archiveName" data-archive="<%- year + 'archive' %>" data-toggle="collapse"
+                           data-parent="#accordion"
+                           data-target="#<%- year + 'archive' %>"
+                           href="<%- url_for('/archives/' + year + '/') %>">
+                            <h5><%- year %> (<%- posts[year][0].length %>)</h5>
+                        </a>
+                    </div>
+                    <div class="collapse" id="<%- url_for('/archives/' + year + '/') %>">
+                        <ul>
+                            <% posts[year].forEach(function(month,index){ %>
+                            <%if(index!==0 && posts[year][index].length>0){%>
+                            <li>
+                                <span><i class="fa fa-angle-right"></i></span>
+                                <a class="archiveName" data-parchive="<%-  year + 'archive'  %>"
+                                   data-archive="<%- year + date(year+'-'+index+'-01', 'MM') + 'archive'%>"
+                                   href="<%- url_for('/archives/' + year + '/'+ date(year+'-'+index+'-01', 'MM')+'/') %>">
+                                    <h5><%- date(year+'-'+index+'-01', 'MMMM') %> (<%- posts[year][index].length %>)</h5>
+                                </a>
+                            </li>
+                            <%}%>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </div>
+
+                <% }); %>
+            </div>
+        </div>
+
+        <!-- tagWidget -->
+        <div class="tagWidget"
+             style="margin-top: 55px;">
+            <h3 style="text-align: center;">Tags</h3>
+            <div class="tag">
+
+                <% site.tags.each(function(tag){ %>
+
+                <a href="<%- url_for('/tags/' + tag.name + '/') %>"><%= tag.name %><%= ' (' + tag.length + ')' %></a>
+                <% }); %>
+            </div>
+
+        </div>
+    </div>
+</div>
