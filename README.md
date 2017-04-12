@@ -3,10 +3,12 @@
 # [Live Demo](http://lanmiao.oschina.io/)
 ![LanMiao Desktop](http://lanmiao.oschina.io/image/lanmiao-desktop.png)
 
+# This project will be continue to update!
+
 ## Init
 ```bash
-git clone https://github.com/YenYuHsuan/hexo-theme-beantech.git ./hexo-beantech
-cd hexo-beantech
+git clone https://github.com/hilanmiao/hexo-theme-lanmiao
+cd hexo-theme-lanmiao
 npm install
 ```
 
