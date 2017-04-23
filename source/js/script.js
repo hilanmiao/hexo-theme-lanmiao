@@ -130,59 +130,67 @@ jQuery(document).ready(function ($) {
 // sidebar 效果
 jQuery(document).ready(function ($) {
     // categoryWidget 分类效果
-    $('.categoryWidget .category').on('click','.categoryName', function () {
+    $('.categoryWidget .category').on('click', '.categoryName', function () {
         $('.categoryWidget .category span i').removeClass('fa-angle-double-down')
         $(this).prev().find('i').addClass('fa-angle-double-down');
     });
 
-    $('.archiveWidget .archive').on('click','.archiveName', function () {
+    // archiveWidget 分类效果
+    $('.archiveWidget .archive').on('click', '.archiveName', function () {
         $('.archiveWidget .archive span i').removeClass('fa-angle-double-down')
         $(this).prev().find('i').addClass('fa-angle-double-down');
     });
 
 
-    //
     var pathname = window.location.pathname;
-    pathname = pathname.substring(1, pathname.length-1).split('/');
+    pathname = pathname.substring(1, pathname.length - 1).split('/');
 
-    // length=4 是二级 3是一级
-    if (pathname[1] === 'categories') {
+    // 如果你的网站没被放在子目录中 length=3 是二级 2是一级，如果放在了子目录中，那这里需要修改
+
+    if (pathname[0] === 'categories') {
         // 根据网址显示活动的分类
 
-        if (pathname.length === 4) {
-            var category = pathname[3];
-            var dom = $('.categoryWidget .collapse .categoryName[data-category="'+decodeURIComponent(category)+'"]');
+        if (pathname.length === 3) {
+            var category = pathname[2];
+            var dom = $('.categoryWidget .collapse .categoryName[data-category="' + decodeURIComponent(category) + '"]');
 
             $(dom).addClass('active');
             var pdom = $(dom).parents('.collapse').addClass('in');
             pdom.prev('.category').find('span i').addClass('fa-angle-double-down');
         } else {
-            var category = pathname[2];
-            var dom = $('.categoryWidget .category .categoryName[data-category="'+decodeURIComponent(category)+'"]');
+            var category = pathname[1];
+            var dom = $('.categoryWidget .category .categoryName[data-category="' + decodeURIComponent(category) + '"]');
             $(dom).addClass('active');
             dom.parents('.category').next('.collapse').addClass('in');
             $(dom).find('i').addClass('fa-angle-double-down');
         }
-    }else if (pathname[1] === 'archives') {
+    } else if (pathname[0] === 'archives') {
         // 根据网址显示活动的归档
 
-        if (pathname.length === 4) {
-            var year = pathname[2];
-            var month = pathname[3];
+        if (pathname.length === 3) {
+            var year = pathname[1];
+            var month = pathname[2];
 
-            var dom = $('.archiveWidget .collapse .archiveName[data-archive="'+year+decodeURIComponent(month)+'archive"]');
+            var dom = $('.archiveWidget .collapse .archiveName[data-archive="' + year + decodeURIComponent(month) + 'archive"]');
 
             $(dom).addClass('active');
             var pdom = $(dom).parents('.collapse').addClass('in');
             pdom.prev('.archive').find('span i').addClass('fa-angle-double-down');
         } else {
-            var year = pathname[2];
-            var dom = $('.archiveWidget .archive .archiveName[data-archive="'+decodeURIComponent(year)+'archive"]');
+            var year = pathname[1];
+            var dom = $('.archiveWidget .archive .archiveName[data-archive="' + decodeURIComponent(year) + 'archive"]');
             $(dom).addClass('active');
             dom.parents('.archive').next('.collapse').addClass('in');
             $(dom).find('i').addClass('fa-angle-double-down');
         }
+    } else if(pathname[0] === 'tags'){
+        // 根据网址显示活动的标签
+        var tag =  pathname[1];
+
+        var dom = $('.tagWidget a[data-tag="'+decodeURIComponent(tag)+'"]');
+        $(dom).addClass('active');
     }
+
 
 });
 

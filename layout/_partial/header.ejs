@@ -1,11 +1,11 @@
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header {
-    <% if (is_home()) { %> background-image: url('<%= url_for() + config["header-img"] %>');
+    <% if (is_home()) { %> background-image: url('<%= url_for(config["header-img"] ) %>');
         /*config*/
     <%} else if (is_post()){%> background-image: url('<%= page["header-img"] %>');
         /*post*/
-    <%} else {%> background-image: url('<%= url_for() + config["header-img"] %>');
+    <%} else {%> background-image: url('<%= url_for(config["header-img"])%>');
         /*page*/
     <%} %>
     }

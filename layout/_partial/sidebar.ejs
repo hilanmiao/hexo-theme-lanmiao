@@ -45,8 +45,9 @@
                             <% category.child.forEach(function(childCategory){ %>
                             <li>
                                 <span><i class="fa fa-angle-right"></i></span>
-                                <a class="categoryName" data-pcategory="<%- category.name %>" data-category="<%- childCategory.name %>"
-                                   href="<%- url_for('/categories/' + category.name + '/'+ childCategory.name+'/') %>"
+                                <a class="categoryName" data-pcategory="<%- category.name %>"
+                                   data-category="<%- childCategory.name %>"
+                                   href="<%- url_for('/categories/' + category.name + '/' + childCategory.name + '/') %>"
                                 >
                                     <h5><%- childCategory.name %> (<%- childCategory.length %>)</h5>
                                 </a>
@@ -68,7 +69,7 @@
                 <%
                 var posts = {};
 
-                site.posts.sort('-date').forEach(function(post) {
+                site.posts.sort('-date').forEach(function (post) {
                     var date = post.date;
                     var year = date.year();
                     var month = date.month() + 1; // month is started from 0
@@ -111,17 +112,18 @@
                     </div>
                     <div class="collapse" id="<%- url_for('/archives/' + year + '/') %>">
                         <ul>
-                            <% posts[year].forEach(function(month,index){ %>
-                            <%if(index!==0 && posts[year][index].length>0){%>
+                            <% posts[year].forEach(function(month, index){ %>
+                            <% if(index !== 0 && posts[year][index].length > 0){ %>
                             <li>
                                 <span><i class="fa fa-angle-right"></i></span>
-                                <a class="archiveName" data-parchive="<%-  year + 'archive'  %>"
-                                   data-archive="<%- year + date(year+'-'+index+'-01', 'MM') + 'archive'%>"
-                                   href="<%- url_for('/archives/' + year + '/'+ date(year+'-'+index+'-01', 'MM')+'/') %>">
-                                    <h5><%- date(year+'-'+index+'-01', 'MMMM') %> (<%- posts[year][index].length %>)</h5>
+                                <a class="archiveName" data-parchive="<%- year + 'archive' %>"
+                                   data-archive="<%- year + date(year + '-' + index + '-01', 'MM') + 'archive' %>"
+                                   href="<%- url_for('/archives/' + year + '/' + date(year + '-' + index + '-01', 'MM') + '/') %>">
+                                    <h5><%- date(year + '-' + index + '-01', 'MMMM') %>
+                                        (<%- posts[year][index].length %>)</h5>
                                 </a>
                             </li>
-                            <%}%>
+                            <% } %>
                             <% }); %>
                         </ul>
                     </div>
@@ -139,7 +141,8 @@
 
                 <% site.tags.each(function(tag){ %>
 
-                <a href="<%- url_for('/tags/' + tag.name + '/') %>"><%= tag.name %><%= ' (' + tag.length + ')' %></a>
+                <a data-tag="<%- tag.name %>"
+                   href="<%- url_for('/tags/' + tag.name + '/') %>"><%= tag.name %><%= ' (' + tag.length + ')' %></a>
                 <% }); %>
             </div>
 
