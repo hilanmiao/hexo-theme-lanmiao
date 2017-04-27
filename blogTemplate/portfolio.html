@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel='stylesheet' href='unitegallery/css/unite-gallery.css' type='text/css'/>
+    <link rel='stylesheet' href='unitegallery/skins/alexis/alexis.css' type='text/css'/>
+    <link rel='stylesheet' href='unitegallery/themes/default/ug-theme-default.css' type='text/css'/>
+
+    <style>
+        #gallery {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" style="margin-top: 100px">
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- 图片最好960*500 -->
+            <div id="gallery" style="display:none;">
+
+                <!-- 参学网  -->
+                <img alt="Image 1 Title" src="image/cat.jpg"
+                     data-image="image/cat.jpg"
+                     data-description="Image 1 Description">
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src='unitegallery/js/unitegallery.min.js'></script>
+<script src='unitegallery/themes/grid/ug-theme-grid.js'></script>
+<script>
+    var api;
+    jQuery(document).ready(function () {
+        api = jQuery("#gallery").unitegallery({
+            //gallery_skin:"alexis"
+        });
+        api.play();
+    });
+
+</script>
+</body>
+</html>

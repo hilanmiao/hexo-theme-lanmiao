@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+            line-height: 1.7;
+            font-size: 16px;
+            color: #404040;
+            overflow-x: hidden;
+            word-break: break-all;
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        .container {
+            background-color: #f5f5f5;
+        }
+
+        .bgorange {
+            background-color: rgb(235, 97, 31);
+        }
+
+        .orange {
+            color: rgb(235, 97, 31);
+        }
+
+        /* About */
+
+        .about .header {
+            height: 60px;
+            text-align: center;
+        }
+
+        .about .header .icon {
+            width: 36px;
+            height: 36px;
+            margin-top: 12px;
+        }
+
+        .about .top {
+            background-color: #FFFFFF;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .about .top .name {
+            font-size: 62px;
+            color: rgb(51, 51, 51);
+            font-weight: bold;
+        }
+
+        .about .top .name i {
+            font-size: 30px;
+        }
+
+        .about .top .position {
+            font-size: 20px;
+            color: rgb(141, 141, 142);
+        }
+
+        /* listing */
+        .about .listing {
+            background-color: #f0f0f0;
+            height: 350px;;
+        }
+
+        .about .listing .objective {
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+        }
+
+        .about .listing .objective p {
+            color: rgb(141, 141, 142);
+            font-size: 16.504px;
+            word-break: break-all;
+        }
+
+        .about .listing .objective h4 {
+            font-weight: bold;
+            color: rgb(81, 83, 86);
+        }
+
+        .about .listing .contactInfo {
+            height: 100%;
+            padding-top: 47px;
+            padding-left: 35px;
+            background-color: #e3e3e2;
+        }
+
+        .about .listing .contactInfo:before {
+            display: block;
+            content: "";
+            border-width: 8px 8px 8px 8px;
+            border-style: solid;
+            border-color: transparent transparent #e3e3e2 transparent;
+
+            /* 定位 */
+            position: absolute;
+            left: 47%;
+            top: -16px;
+        }
+
+        .about .listing .socialIcons {
+            height: 100%;
+            padding-top: 47px;
+            padding-left: 35px;
+        }
+
+        .about .listing .contactInfo i {
+            width: 34px;
+        }
+
+        .about .listing .socialIcons i {
+            padding-right: 15px;
+        }
+
+        /* Experience*/
+        .experience h2 {
+            font-weight: bold;
+            padding: 30px 15px;
+        }
+
+        .experience .project {
+            border-top: 3px solid rgb(235, 97, 31);
+            padding: 10px 30px;
+        }
+
+        .experience .project .name {
+            font-weight: bold;
+        }
+
+        .experience .project .address {
+            color: #8d8d8d;
+        }
+
+        .experience .project .line {
+            color: #8d8d8d;
+            padding: 0 30px;
+        }
+
+        .experience .project .year {
+            color: rgb(235, 97, 31);
+        }
+
+        /* Intro */
+        .intro {
+            margin: 30px 30px 50px 30px;
+        }
+
+        /* Education */
+        .education {
+            border: 1px solid rgb(235, 97, 31);
+            text-align: center;
+            background-color: #FFFFFF;
+            height: 490px;
+        }
+
+        .education .top h2 {
+            background-color: rgb(235, 97, 31);
+            margin: 0;
+            padding: 12px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .education .school {
+            margin: 30px;
+        }
+
+        .education .school h4 {
+            color: rgb(141, 141, 142);
+        }
+
+        .education .trainings {
+            padding:20px 30px 20px 30px;
+        }
+
+        .education .trainings h2 {
+            margin:0;
+            color: rgb(235, 97, 31);
+            font-weight: bold;
+        }
+
+        .education .trainings h4 {
+
+            color: rgb(100, 100, 99);
+        }
+
+        .education .training {
+            border: 1px solid rgb(235, 97, 31);
+            border-radius: 99em;
+            padding: 10px 5px;
+            color: rgb(141, 141, 142);
+        }
+
+        /*Languages*/
+        .languages {
+            text-align: center;
+            background-color: #FFFFFF;
+        }
+
+        .languages .top h2 {
+            margin: 0;
+            padding: 12px;
+            font-weight: bold;
+        }
+
+        .languages .language {
+            margin: 10px 20px 10px 20px;
+            background-color: #f5f5f5;
+            border-radius: 99em;
+        }
+
+        .languages .language .col-lg-4 {
+            padding: 0;
+        }
+
+        .languages .language .col-lg-4 p {
+            margin: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .languages .language .col-lg-4:first-of-type {
+            color: #FFFFFF;
+            background-color: rgb(235, 97, 31);
+            border-radius: 99em;
+        }
+
+        .languages .star {
+            padding: 0px 20px 10px 20px;
+        }
+
+        .languages .star .col-lg-4 {
+            padding: 0;
+            font-size: 12px;
+            color: #dddddd;
+        }
+
+        /*Awards*/
+        .awards {
+            margin-top: 39px;
+            margin-bottom: 39px;
+            text-align: left;
+            background-color: #FFFFFF;
+        }
+
+        .awards .top h2 {
+            margin: 0;
+            padding: 12px;
+            font-weight: bold;
+            padding-left: 20px;
+            border-right: 2px solid rgb(235, 97, 31);
+        }
+
+        .awards .award {
+            padding: 10px;
+            border-right: 2px solid #dddddd;;
+        }
+
+        .awards .award p {
+            margin: 0;
+            color: rgb(141, 141, 141);
+        }
+
+        /* Thanks */
+        .thanks {
+            text-align: center;
+            background-color: #FFFFFF;
+        }
+
+        .thanks .top h4 {
+            margin: 0;
+            padding: 20px 12px;
+            font-weight: bold;
+        }
+
+        .thanks p {
+            margin: 0;
+            color: rgb(141, 141, 142)
+        }
+
+        .thanks .name {
+            color: rgb(235, 97, 31);
+            padding: 10px;
+        }
+
+        /* Skills */
+        .skills {
+            text-align: center;
+            background-color: #FFFFFF;
+            height: 490px;
+        }
+
+        .skills .top h2 {
+            margin: 0;
+            padding: 12px;
+            font-weight: bold;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .skills .skill {
+            padding:20px 15px 5px 15px;
+            font-weight:bold;
+        }
+
+        /* Skills Icon */
+        .skillsIcon {
+            text-align: center;
+            background-color: #FFFFFF;
+            height: 490px;
+        }
+
+        .skillsIcon .top h2 {
+            background-color: rgb(235, 97, 31);
+            color: #FFFFFF;
+            margin: 0;
+            padding: 12px;
+            font-weight: bold;
+        }
+
+        .skillsIcon .icon{
+            padding:20px 15px 5px 15px;
+        }
+
+
+        /* designer */
+        .designer p{
+            text-align: center;
+            color: rgb(141, 141, 141);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- About -->
+    <div class="row about">
+        <!-- Header -->
+        <div class="col-lg-12 header bgorange">
+            <img src="image/aboutIcon.png" class="icon">
+        </div>
+
+        <!-- Top -->
+        <div class="col-lg-12 top">
+            <h1 class="name">Lan Miao <i class="fa fa-mars "></i></h1>
+            <h4 class="position">WEB DEVELOPER <span class="orange"> & </span>NATIVE APP DEVELOPER</h4>
+        </div>
+
+        <!-- Listing -->
+        <div class="col-lg-12 listing">
+            <div class="col-lg-6 objective">
+                <h4>ABOUT ME</h4>
+                <p>
+                    Hi,我是xxx，13年实习对日软件外包，14年毕业后一直从事web开发，偶尔做原生android打打辅助，即使没有前端没有设计，也想把产品做好，奔着全栈的态度做工作。天天刷“开源中国，CSDN”，掌握一手资料，保持开阔的视野才能找到更酷的解决方案。热爱开源，觉得有意思会写成博客，对工作有帮助的代码也会共享到github上，嘛，虽然没有star。热爱技术，自学能力强，特别是关注前端主流框架，像VueJS，electronJS都是一直在用的，可以显著提高开发效率。但后台短板也很明显，学校学的是java，工作却用的.net，夸张的说“复制粘贴，增删改查”即后台水平的整体概括。我的愿望是在一家能happy
+                    coding的公司，大家相互学习，相互提升，将工作变成一种生活方式。</p>
+            </div>
+
+            <div class="col-lg-3 contactInfo">
+                <p><i class="fa fa-hand-o-right fa-lg"></i><a href="http://lanmiao.oschina.io/" target="_blank">http://lanmiao.oschina.io/</a>
+                </p>
+
+                <p><i class="fa fa-envelope fa-lg"></i>123456789@qq.com</p>
+
+                <p><i class="fa fa-volume-control-phone fa-lg"></i>123456789</p>
+
+                <p><i class="fa fa-home fa-lg"></i>中国</p>
+
+                <p><i class="fa fa-home fa-birthday-cake"></i>9999年</p>
+
+                <p><i class="fa fa-money fa-"></i>5K</p>
+
+            </div>
+            <div class="col-lg-3 socialIcons">
+                <p><i class="fa fa-github fa-2x"></i>/github</p>
+
+                <p><i class="fa fa-android fa-2x"></i>/android</p>
+
+                <p><i class="fa fa-google fa-2x"></i>/google</p>
+
+                <p><i class="fa fa-stack-overflow fa-2x"></i>/stack-overflow</p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Experience -->
+    <div class="row experience">
+        <div class="col-lg-12 ">
+            <h2>Experience</h2>
+            <div class="col-lg-12 project">
+                <h4 class="name">对日软件外包</h4>
+                <h4><span class="address">济南</span><span class="line">|</span> <span class="year">2013~2014</span></h4>
+                <p class="content">
+                    实习阶段做的是对日软件外包，因为没有项目经验，技术上就是打杂的，跟着大神复制粘贴，学习日语到N4水平。但是这一年也不是白干的，可以说这一年给我以后的软件开发思想带来了巨大的影响。“不能有多余的空格、准时准点的工作计划、完整成熟的编码测试流程、详尽的文档...”。受益于日本人做事的仔细和严谨，习惯关注代码的整洁，习惯了读文档，习惯了写文档，就算转作国内之后这个习惯依然保留，即便公司没有这种写文档的习惯，我也会自己搞一份给自己看，干净利落，做起来舒心。
+                </p>
+            </div>
+
+            <div class="col-lg-12 project">
+                <h4 class="name">web 开发</h4>
+                <h4><span class="address">潍坊</span><span class="line">|</span> <span class="year">2015~2017</span></h4>
+                <p class="content">
+                    ①“智慧社区系统”：使用asp.net MVC
+                    4开发,主要负责前端逻辑和整个系统的app开发，android是一边看老罗的视频一边做的，就是简单的增删改查。网络端使用webservice+ksoap2+gson。
+
+                    <br><a href="https://github.com/hilanmiao/">②IP拨号App</a>：这个是模仿的心印通IP拨号app，提供T9匹配，但多音字还有问题，UI直接仿的自己小米手机的拨号盘。用了不少开源项目，包括开发框架kjframe，汉字转拼音的pinyin4j，还有一些动画库，项目已经开源有兴趣的可以下载。
+
+                    <br><a href="http://www.hlxzyw.com/">③翰林轩数字教育智能投送平台</a>：这是一个高水平高质量的教辅资源平台。使用asp.net开发，负责后端逻辑开发，视频音频等资料上传审核，参与智能组卷等模块的开发。
+
+                    <br><a href="">④参学网</a>：一个宣传佛教参学的网站，日pV。使用asp.net开发，负责“参学空间”的开发。由于仿QQ空间页面结构较复杂，所以首次大面使用组件方式开发，使用MVVM框架VueJS，抛弃了JQuery+Template模式，充分感受到了数据驱动编程和前端组件化的好处。
+
+                    <br><a href="">④培训网</a>
+                    这是一个网上视频教学平台，提供在线报名，在线培训，在线考试等功能。第一个完全由自己负责的项目，从项目需求、部署维护、设计和开发基本都由自己完成，网站整体采用响应式设计，使用bootstrap框架搭建，asp.net开发后端，VueJS
+                    MVVM框架做前端。视频学习系统使用的Html5
+                    开源视频播放插件VideoJS，二次开发。使用Html5的media做的在线考试拍照，遇到了https的坑，因为摄像头属于用户敏感信息。首次使用到WebWorker开启新线程解决js单线程问题。
+
+                </p>
+            </div>
+
+            <div class="col-lg-12 project">
+                <h4 class="name">开源项目</h4>
+                <h4><span class="address">我的世界</span><span class="line">|</span> <span class="year">2016~</span></h4>
+                <p class="content">
+                    参与开源能获取伟大的实践和经验，增加协作能力，互相学习彼此的技巧，提高编码能力。我喜欢折腾一些新东西，所以github上会放一些有意思的东西。
+                    <br><a href="http://lanmiao.oschina.io/">①个人网站</a>：就是用开源项目
+                    <a href="http://hexo.io">Hexo</a>+oschina pages搭建的，发布了一个简洁风格的 <a
+                        href="https://github.com/hilanmiao/hexo-theme-lanmiao">主题-懒喵</a>也已经被官方收录了。
+
+                    <br><a href="https://github.com/hilanmiao/EasyFront">②EasyFront</a>：这个项目主要整理了工作中会用到的一些效果，代码等，主攻前端，里面有raphealJS+SVG做的中国地图，还有二次开发的JQuery插件，demo等。
+
+                    <br><a href="https://github.com/hilanmiao/EasyFront">③LoveDay</a>：这个项目是拿来练手的跨平台日记类应用，主要为了寻求解决方案，所以用的东西会多一些。Web端使用vue-cli+饿了么mint-ui，Desktop使用electronJS进行封装，Android使用原生开发，UI使用material
+                    design，IOS使用Dcloud，干嘛这么麻烦？无非想多学点东西而已，项目还未完成，有兴趣的可以watch一下。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro -->
+    <div class="row intro">
+        <!-- Education -->
+        <div class="col-lg-4 ">
+            <div class="education">
+                <div class="top">
+                    <h2>Education</h2>
+                </div>
+                <div class="school">
+                    <h3 class="schoolname">山东商业职业技术学院</h3>
+                    <h4>专科 <span>|</span> <span class="orange">2011~2014</span></h4>
+                    <h4>软件技术专业</h4>
+                </div>
+                <div class="trainings">
+                    <h2>Trainings</h2>
+                    <h4>ON imooc.com</h4>
+                    <p class="training">前端入门系列教程</p>
+                    <p class="training">老罗android视频教程</p>
+
+                    <p class="training">版本控制git</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="col-lg-4">
+            <div style="height: 490px;">
+
+                <div class="languages">
+                    <div class="top">
+                        <h2>Languages</h2>
+                    </div>
+                    <div class="language">
+                        <div class="col-lg-4"><p>Chinese</p></div>
+                        <div class="col-lg-4"><p>Japanese</p></div>
+                        <div class="col-lg-4"><p>English</p></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="star">
+                        <div class="col-lg-4">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <div class="col-lg-4">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <div class="col-lg-4">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+                <!-- Awards -->
+                <div class="awards">
+                    <div class="top">
+                        <h2>Awards</h2>
+                    </div>
+                    <div class="award">
+                        <div class="col-lg-2">
+<p><i class="fa fa-trophy fa-2x"></i></p>
+                        </div>
+                        <div class="col-lg-10">
+                            <p>学生时代齐鲁软件大赛二等奖</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+                <!-- Thanks -->
+                <div class="thanks">
+                    <div class="top">
+                        <h4>THANK YOU FOR YOUR TIME</h4>
+                    </div>
+                    <div>
+                        <p>如果你需要了解更多的信息
+                            <br>请联系我</p>
+                        <p class="name">ZHANG</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="col-lg-3 ">
+            <div class="skills">
+                <div class="top">
+                    <h2>Skills</h2>
+                </div>
+                <div class="skill">
+                    <p>ASP.NET</p>
+                    <p>SQL SERVER</p>
+                    <p>ANDROID</p>
+                    <p>JAVASCRIPT</p>
+                    <p>AJAX</p>
+                    <p>HTML5</p>
+                    <p>CSS</p>
+                    <p>VUEJS</p>
+                    <p>ELECTRONJS</p>
+                    <p>SAE</p>
+                    <p>MARKDOWN</p>
+                </div>
+            </div>
+        </div>
+
+        <!--Skills Icon-->
+        <div class="col-lg-1 ">
+            <div class="skillsIcon">
+                <div class="top">
+                    <h2><i class="fa fa-cogs"></i></h2>
+                </div>
+                <div class="icon">
+                    <p><i class="fa fa-html5"></i></p>
+                    <p><i class="fa fa-css3"></i></p>
+                    <p><i class="fa fa-android"></i></p>
+                    <p><i class="fa fa-chrome"></i></p>
+                    <p><i class="fa fa-github"></i></p>
+                    <p><i class="fa fa-jsfiddle"></i></p>
+                    <p><i class="fa fa-terminal"></i></p>
+                    <p><i class="fa fa-steam"></i></p>
+                    <p><i class="fa fa-code"></i></p>
+                    <p><i class="fa fa-share-alt"></i></p>
+                    <p><i class="fa fa-group"></i></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- designer -->
+    <div class="row designer">
+        <p>Thanks to designer <a href="https://www.behance.net/plateastudio" target="_blank">Platea Studio</a></p>
+    </div>
+
+</div>
+
+<!-- jQuery -->
+<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
